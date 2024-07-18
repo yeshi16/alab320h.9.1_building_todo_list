@@ -1,5 +1,7 @@
 import { useState } from "react";
 import AddTodo from "./AddTodo";
+import CompleteCheck from "./CompletCheck";
+import DeleteTodo from "./DeleteTodo";
 
 function Form() {
 
@@ -34,10 +36,11 @@ function Form() {
                                     <input
                                         type='checkbox'
                                         checked={todo.complete}
+                                        onChange={() => CompleteCheck(todos, setTodos, i)}
                                     />
                                     {todo.text}
                                     <button> Edit </button>
-                                    <button disabled={!todo.complete}> Delete </button>
+                                    <button disabled={!todo.complete} onClick={() => DeleteTodo(todos, setTodos, i)}> Delete </button>
                                 </li>
                             </>
                         ))
