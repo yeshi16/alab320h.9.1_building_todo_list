@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddTodo from "./AddTodo";
 
 function Form() {
 
@@ -20,7 +21,7 @@ function Form() {
                     placeholder="Add todo"
                     onChange={(e) => { setAddTodo(e.target.value) }}
                 />
-                <button>Add</button>
+                <button onClick={() => AddTodo(todos, setTodos, addTodo, setAddTodo)}>Add</button>
             </div>
 
             <div>
